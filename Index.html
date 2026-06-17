@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--
+  GUIA DE EDICAO RAPIDA
+  Pesquise por: SEU_LINK_KIWIFY -> substitua pelo link de checkout da Kiwify (aparece 3 vezes)
+  Pesquise por: 27,90           -> altere o preco se necessario (aparece 3 vezes)
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Dark 2026 - Do Zero aos Primeiros Resultados</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:  #0a0a0a;
+  --card:   #151515;
+  --border: #262626;
+  --pink:   #FF1B7C;
+  --pink2:  #ff4d96;
+  --white:  #f5f5f5;
+  --muted:  #8a8a8a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#bg-canvas {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+/* BARRA DE COMPRA FIXA */
+.buy-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 14px 20px;
+  background: rgba(10,10,10,0.95);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.buy-bar-text { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+.buy-bar-text strong { color: var(--white); display: block; font-size: 0.85rem; }
+
+.btn-buy {
+  flex-shrink: 0;
+  background: var(--pink);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 22px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.btn-buy:hover { background: var(--pink2); }
+
+.wrap { position: relative; z-index: 1; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 24px 120px;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--pink);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.hero-eyebrow-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--pink);
+  opacity: 0.5;
+}
+.hero-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(2.6rem, 13vw, 4.4rem);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+.hero-tag span { color: var(--pink); }
+.hero-sub2 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.85rem, 3.2vw, 1.05rem);
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.hero-title {
+  font-size: clamp(1.4rem, 5.2vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 auto 16px;
+  max-width: 520px;
+}
+.hero-title span { color: var(--pink); }
+.hero-desc {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 auto 36px;
+}
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.btn-hero {
+  background: var(--pink);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 17px 36px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 40px rgba(255,27,124,0.25);
+}
+.btn-hero:hover { background: var(--pink2); box-shadow: 0 0 60px rgba(255,27,124,0.4); }
+.hero-guarantee { font-size: 0.72rem; color: var(--muted); }
+
+/* SECOES */
+section { padding: 72px 24px; }
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--pink);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.section-title {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  max-width: 480px;
+}
+.section-title span { color: var(--pink); }
+.section-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 40px;
+}
+
+/* DIFERENCIAL - SEM PROMESSA IRREAL */
+.honest-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--pink);
+  border-radius: 0 12px 12px 0;
+  padding: 22px 22px;
+  font-size: 0.88rem;
+  color: #cccccc;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.honest-box strong { color: var(--pink); }
+
+/* STATS */
+.stats {
+  padding: 32px 24px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 1px;
+  background: var(--border);
+}
+.stat {
+  background: var(--black);
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.3rem, 4.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--pink);
+  line-height: 1;
+}
+.stat-lbl { font-size: 0.62rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* MODULOS */
+.modules { padding: 72px 24px; }
+.modules-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.module-item {
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+.module-item:hover { background: #1a1a1a; }
+.mod-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--pink);
+  opacity: 0.8;
+  min-width: 28px;
+  flex-shrink: 0;
+}
+.mod-name { font-size: 0.9rem; font-weight: 500; flex: 1; }
+.module-item.bonus {
+  background: #1f1018;
+  border-top: 1px solid rgba(255,27,124,0.15);
+}
+.module-item.bonus .mod-name { color: var(--pink); }
+
+/* GANCHO PREVIEW */
+.hooks-preview { padding: 72px 24px; background: #0c0c0c; }
+.hook-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: #d4d4d4;
+  line-height: 1.5;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.hook-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--pink);
+  flex-shrink: 0;
+}
+
+/* PARA QUEM E */
+.for-who { padding: 72px 24px; }
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 40px;
+}
+.who-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.who-card:hover { border-color: rgba(255,27,124,0.35); }
+.who-icon { font-size: 1.4rem; }
+.who-title { font-size: 0.9rem; font-weight: 600; }
+.who-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+/* BONUS */
+.bonus-section { padding: 72px 24px; }
+.bonus-card {
+  background: #1f1018;
+  border: 1px solid rgba(255,27,124,0.25);
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-top: 40px;
+  position: relative;
+}
+.bonus-badge {
+  position: absolute;
+  top: -14px; right: 20px;
+  background: var(--pink);
+  color: #ffffff;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+.bonus-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+.bonus-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #cccccc;
+}
+.bonus-icon { color: var(--pink); flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+
+/* PLANO */
+.plan-section { padding: 72px 24px; }
+.plan-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 40px;
+  position: relative;
+}
+.plan-steps::before {
+  content: '';
+  position: absolute;
+  left: 19px; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.plan-step {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 32px;
+  position: relative;
+}
+.plan-step:last-child { padding-bottom: 0; }
+.step-dot {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--black);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--pink);
+  flex-shrink: 0;
+  z-index: 1;
+  text-align: center;
+}
+.step-content { padding-top: 6px; }
+.step-week {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--pink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+.step-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.step-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* FINAL CTA */
+.final-cta { padding: 80px 24px 140px; text-align: center; }
+.final-cta-title {
+  font-size: clamp(1.7rem, 5.8vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 auto 16px;
+  max-width: 480px;
+}
+.final-cta-title span { color: var(--pink); }
+.final-cta-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 auto 36px;
+  max-width: 360px;
+  line-height: 1.7;
+}
+.final-price-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.final-price {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(2.2rem, 9vw, 3.5rem);
+  font-weight: 700;
+  color: var(--pink);
+  line-height: 1;
+  margin-bottom: 28px;
+}
+.final-price sup { font-size: 45%; vertical-align: super; opacity: 0.75; }
+.final-subtext { font-size: 0.72rem; color: var(--muted); margin-top: 14px; }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 24px 100px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (min-width: 600px) {
+  .who-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      Curso Digital Premium
+      <span class="hero-eyebrow-line"></span>
+    </div>
+
+    <div class="hero-tag">TIKTOK<br><span>DARK</span> 2026</div>
+    <div class="hero-sub2">Do zero aos primeiros resultados</div>
+
+    <h1 class="hero-title">
+      Crie conteúdo sem aparecer e cresça com <span>estratégia, não com sorte</span>
+    </h1>
+
+    <p class="hero-desc">
+      Aprenda a usar IA e ferramentas gratuitas para produzir conteúdo dark no TikTok, do absoluto zero, com um plano realista e sem promessas vazias.
+    </p>
+
+    <div class="hero-cta">
+      <!-- EDITAR: substitua SEU_LINK_KIWIFY -->
+      <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-hero">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Quero acessar agora - R$ 27,90
+      </a>
+      <span class="hero-guarantee">Acesso imediato após o pagamento</span>
+    </div>
+  </section>
+
+  <!-- HONESTIDADE -->
+  <section class="fade-in" style="padding-top:0;">
+    <div class="honest-box">
+      <strong>Sem promessas vazias:</strong> este material não promete "ficar rico em 30 dias". Promete um caminho claro e realista: entender o algoritmo, escolher um nicho com cabeça, usar IA para acelerar a produção e construir uma audiência de verdade.
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats fade-in">
+    <div class="stat">
+      <span class="stat-num">8</span>
+      <span class="stat-lbl">Módulos completos</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">175+</span>
+      <span class="stat-lbl">Ganchos e prompts</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">90</span>
+      <span class="stat-lbl">Dias de plano de ação</span>
+    </div>
+  </div>
+
+  <!-- MODULOS -->
+  <section class="modules fade-in">
+    <div class="section-label">O que você vai aprender</div>
+    <h2 class="section-title">8 módulos + <span>bônus completo</span></h2>
+    <p class="section-desc">Do entendimento do algoritmo até a criação do seu primeiro produto digital.</p>
+
+    <div class="modules-grid">
+      <div class="module-item"><span class="mod-num">01</span><span class="mod-name">Como o Algoritmo Funciona</span></div>
+      <div class="module-item"><span class="mod-num">02</span><span class="mod-name">Escolha do Nicho</span></div>
+      <div class="module-item"><span class="mod-num">03</span><span class="mod-name">Ferramentas de Inteligência Artificial</span></div>
+      <div class="module-item"><span class="mod-num">04</span><span class="mod-name">Produção de Vídeos</span></div>
+      <div class="module-item"><span class="mod-num">05</span><span class="mod-name">Ganchos que Chamam Atenção</span></div>
+      <div class="module-item"><span class="mod-num">06</span><span class="mod-name">Criação de Produtos Digitais</span></div>
+      <div class="module-item"><span class="mod-num">07</span><span class="mod-name">Link na Bio e Conversão</span></div>
+      <div class="module-item"><span class="mod-num">08</span><span class="mod-name">Plano de Crescimento (7, 30 e 90 dias)</span></div>
+      <div class="module-item bonus"><span class="mod-num">+</span><span class="mod-name">Bônus: Ganchos, Ideias e 75 Prompts de IA</span></div>
+    </div>
+  </section>
+
+  <!-- AMOSTRA DE GANCHOS -->
+  <section class="hooks-preview fade-in">
+    <div class="section-label">Amostra real</div>
+    <h2 class="section-title">Ganchos prontos para <span>copiar e adaptar</span></h2>
+    <p class="section-desc">Estruturas testadas que você pode usar no seu nicho hoje mesmo.</p>
+
+    <div class="hook-card"><span class="hook-num">01</span> "Se eu tivesse que começar do zero hoje, eu faria isso primeiro."</div>
+    <div class="hook-card"><span class="hook-num">02</span> "A maioria das pessoas usa isso errado, e isso custa tempo e dinheiro."</div>
+    <div class="hook-card"><span class="hook-num">03</span> "Ninguém me contou isso quando eu comecei, e eu queria ter sabido antes."</div>
+  </section>
+
+  <!-- PARA QUEM E -->
+  <section class="for-who fade-in">
+    <div class="section-label">Para quem é</div>
+    <h2 class="section-title">Feito para quem está <span>começando do zero</span></h2>
+
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-icon">&#127916;</div>
+        <div class="who-title">Iniciantes no TikTok</div>
+        <div class="who-desc">Nunca postou nada? O material te leva do zero ao primeiro vídeo publicado.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#128100;</div>
+        <div class="who-title">Quem não quer aparecer</div>
+        <div class="who-desc">Aprenda a criar conteúdo de qualidade sem mostrar o rosto.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#129302;</div>
+        <div class="who-title">Curiosos por IA</div>
+        <div class="who-desc">Use ChatGPT, Claude e Gemini de forma estratégica na criação de conteúdo.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#9203;</div>
+        <div class="who-title">Quem tem pouco tempo</div>
+        <div class="who-desc">Processos rápidos e práticos para produzir mesmo com agenda apertada.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#128202;</div>
+        <div class="who-title">Quem quer entender dados</div>
+        <div class="who-desc">Aprenda a interpretar retenção, alcance e métricas reais do TikTok.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#128161;</div>
+        <div class="who-title">Futuros criadores de produto</div>
+        <div class="who-desc">Transforme audiência em ebooks, packs e produtos digitais simples.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUS -->
+  <section class="bonus-section fade-in">
+    <div class="section-label">Incluso sem custo extra</div>
+    <h2 class="section-title"><span>Bônus completo</span> para você</h2>
+
+    <div class="bonus-card">
+      <span class="bonus-badge">BÔNUS</span>
+      <ul class="bonus-list">
+        <li><span class="bonus-icon">+</span> 50 Ideias de Vídeos prontas para adaptar a qualquer nicho</li>
+        <li><span class="bonus-icon">+</span> 50 Ganchos Extras além dos já incluídos nos módulos</li>
+        <li><span class="bonus-icon">+</span> 25 Prompts completos para Claude</li>
+        <li><span class="bonus-icon">+</span> 25 Prompts completos para ChatGPT</li>
+        <li><span class="bonus-icon">+</span> 25 Prompts completos para Gemini</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PLANO -->
+  <section class="plan-section fade-in">
+    <div class="section-label">Plano de crescimento</div>
+    <h2 class="section-title">Um caminho claro, <span>não uma promessa vazia</span></h2>
+
+    <div class="plan-steps">
+      <div class="plan-step">
+        <div class="step-dot">7d</div>
+        <div class="step-content">
+          <div class="step-week">Primeiros 7 dias</div>
+          <div class="step-title">Fundação</div>
+          <div class="step-desc">Escolher nicho, configurar perfil, montar biblioteca de vídeos e publicar os 2 primeiros conteúdos.</div>
+        </div>
+      </div>
+      <div class="plan-step">
+        <div class="step-dot">30d</div>
+        <div class="step-content">
+          <div class="step-week">Primeiros 30 dias</div>
+          <div class="step-title">Consistência</div>
+          <div class="step-desc">Aumentar o ritmo de publicação, testar ganchos diferentes e analisar o que performa melhor.</div>
+        </div>
+      </div>
+      <div class="plan-step">
+        <div class="step-dot">90d</div>
+        <div class="step-content">
+          <div class="step-week">Primeiros 90 dias</div>
+          <div class="step-title">Maturação</div>
+          <div class="step-desc">Refinar formato com base em dados reais e lançar seu primeiro produto digital para a audiência construída.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <!-- EDITAR: substitua SEU_LINK_KIWIFY e altere 27,90 se mudar o preco -->
+  <section class="final-cta fade-in" id="comprar">
+    <div class="section-label">Acesso imediato</div>
+    <h2 class="final-cta-title">Pare de assistir vídeo sobre o assunto. <span>Comece a aplicar.</span></h2>
+    <p class="final-cta-desc">8 módulos completos + bônus com 175 ganchos, ideias e prompts. Tudo em um único material.</p>
+
+    <div class="final-price-label">Investimento único</div>
+    <div class="final-price"><sup>R$</sup>27<span style="font-size:55%;opacity:0.85">,90</span></div>
+
+    <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-hero" style="font-size:1rem;padding:18px 40px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Comprar agora - R$ 27,90
+    </a>
+
+    <p class="final-subtext">Pagamento seguro - Acesso imediato - Produto digital</p>
+  </section>
+
+  <footer>2026 - TikTok Dark - Todos os direitos reservados</footer>
+
+</div>
+
+<!-- BARRA FIXA - EDITAR: substitua SEU_LINK_KIWIFY -->
+<div class="buy-bar">
+  <div class="buy-bar-text">
+    <strong>TikTok Dark 2026</strong>
+    R$ 27,90 - Acesso imediato
+  </div>
+  <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-buy">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    Comprar
+  </a>
+</div>
+
+<script>
+(function(){
+  var canvas = document.getElementById('bg-canvas');
+  var ctx = canvas.getContext('2d');
+  var W, H, particles = [];
+
+  function resize(){
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  var CHARS = ['0','1','/','#','@','>'];
+  var PINK = '#FF1B7C';
+
+  function init(){
+    particles = [];
+    var count = Math.min(45, Math.floor(W * H / 18000));
+    for(var i=0; i<count; i++){
+      particles.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        char: CHARS[Math.floor(Math.random()*CHARS.length)],
+        size: 9 + Math.random()*6,
+        speed: 0.12 + Math.random()*0.25,
+        alpha: 0.05 + Math.random()*0.12,
+        drift: (Math.random()-0.5)*0.25
+      });
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0; i<particles.length; i++){
+      var p = particles[i];
+      ctx.font = p.size + "px 'Space Mono', monospace";
+      ctx.fillStyle = PINK;
+      ctx.globalAlpha = p.alpha;
+      ctx.fillText(p.char, p.x, p.y);
+      p.y -= p.speed;
+      p.x += p.drift;
+      if(p.y < -20){ p.y = H+20; p.x = Math.random()*W; p.char = CHARS[Math.floor(Math.random()*CHARS.length)]; }
+      if(p.x < -20 || p.x > W+20){ p.x = Math.random()*W; }
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  init();
+  draw();
+  window.addEventListener('resize', function(){ resize(); init(); });
+})();
+
+(function(){
+  var els = document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('visible'); });
+  }
+})();
+</script>
+</body>
+</html>
